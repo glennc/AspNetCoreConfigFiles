@@ -1,0 +1,15 @@
+#Simple starter config
+[Unit]
+#80 char maximum
+Description=Sample application.
+
+[Service]
+#Simple is the default, and as such this could be omitted.
+Type=simple
+WorkingDirectory=/var/www/webapp
+ExecStart=/usr/bin/dotnet /var/www/webapp/sampleApp.dll
+User=web
+
+[Install]
+#options are graphical, for GUIs, or multi-user for everthing else.
+WantedBy=multi-user.target
